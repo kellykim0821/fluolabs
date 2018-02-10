@@ -1,0 +1,28 @@
+def setup():
+    global ch
+    size(800, 800)
+    msFont = loadFont("data/MS-Gothic-48.vlw")
+    textFont(msFont, 100)
+    #textSize(60)
+    global angle
+    size(400, 400)
+    angle = 0
+    background(0)
+
+    rotate(radians(angle))
+    
+    angle = angle + 1
+     
+    ch = 0x30A0 + random(96)
+    
+def draw():
+    background(0)
+    fill(random(255), random(255), random(255))
+    #text('a', width/2, height/2)
+    ch = 0x30A0 + random(96)
+    text(unichr(ch), width/2, height/2)
+    
+def keyPressed():
+    global ch
+    print("hello")
+    ch = 0x30A0 + random(96)
