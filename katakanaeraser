@@ -1,0 +1,30 @@
+# sketch.py
+symbolSize = 60
+
+def setup():
+    global ch
+    size(800, 800)
+    
+    msfont = loadFont("data/MS-Gothic-48.vlw")
+    textFont(msfont, symbolSize)
+    ch = unichr(0x30A0 + int(random(96)))
+    background(0)
+        
+def draw():
+    #background(0)
+    fill(random(255), random(255), random(255))
+    text("a", width/2, height/2)
+    ch = 0x30A0 + random(96)
+    text(unichr(ch), random(width), random(height))
+    
+    if (mousePressed):
+        fill(0)
+        ellipse(mouseX, mouseY, 100, 100)
+    
+def keyPressed():
+    global ch
+    print(key)
+    ch = unichr(0x30A0 + int(random(96)))
+    if (key == " "):
+        background(0)
+    print(key)
